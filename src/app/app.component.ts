@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  dinamicTitle = "Titulo dinamico, passado por propertyBind";
+
   constructor(){
     console.log('Passei por aqui na app.component.ts');
-
-    
   }
 }
