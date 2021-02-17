@@ -21,13 +21,13 @@ export class ExecicioDataBindingComponent implements OnInit {
   @Output() currentValueChange = new EventEmitter();
   changedValueChange: any;
 
-  increment(){
-    this.currentValue += 1;
-    this.changedValueChange.emit(this.currentValue);
+  increment = () =>{
+    this.currentValue = this.currentValue - 1 + 2;
+    this.currentValueChange.emit(this.currentValue);
   }
-  decrement(){
+  decrement = () =>{
     this.currentValue -= 1;
-    this.changedValueChange.emit(this.currentValue);
+    this.currentValueChange.emit(this.currentValue);
   }
   currentValueInput($event: any){
     console.log('event ', $event);
