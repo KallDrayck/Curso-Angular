@@ -1,6 +1,17 @@
 <app-header
-[title]="dinamicTitle"
+    [title]="dinamicTitle"
 >
 </app-header>
+
 <app-home></app-home>
+
+<app-execicio-data-binding
+    [palavra]="palavra"
+    [color]="'green'"
+    (clicado)="eventReceived($event)"
+
+    [currentValue]="10"
+    (changedValue)="onUpdateValue($event)"
+></app-execicio-data-binding>
+
 <app-footer></app-footer>
