@@ -9,9 +9,8 @@
     [palavra]="palavra"
     [color]="'green'"
     (clicado)="eventReceived($event)"
-
-    [currentValue]="10"
-    (changedValue)="onUpdateValue($event)"
+    
+    [(currentValue)]="initialValueCounter"
 ></app-execicio-data-binding>
 
 <app-footer></app-footer>

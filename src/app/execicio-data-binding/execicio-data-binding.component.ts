@@ -18,13 +18,16 @@ export class ExecicioDataBindingComponent implements OnInit {
   
   //exercicio contador
   @Input() currentValue = 0;
-  @Output() changedValue = new EventEmitter();
+  @Output() currentValueChange = new EventEmitter();
+  changedValueChange: any;
 
   increment(){
     this.currentValue += 1;
+    this.changedValueChange.emit(this.currentValue);
   }
   decrement(){
     this.currentValue -= 1;
+    this.changedValueChange.emit(this.currentValue);
   }
   currentValueInput($event: any){
     console.log('event ', $event);

@@ -8,17 +8,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   dinamicTitle = 'Titulo dinamico, passado por propertyBind';
-  palavra = '';
+  palavra = 'Estou no app, component';
+  // contador
+  initialValueCounter = 100;
 
   constructor(){
-
+    
   }
   eventReceived($event: any){
     console.log('AppComponent: EVENTO RECEBIDO!', $event);
   }
-
+  
   // contador
-  onUpdateValue(newValue: any){
-    console.log('Recebi o valor atualizado do contador', newValue);
-  }
+  // onUpdateValue(newValue: any){
+  //   this.initialValueCounter = newValue;
+  //   console.log('Recebi o valor atualizado do contador', newValue);
+  //   console.log('initialValue do app.component', this.initialValueCounter);
+  // }
 }
