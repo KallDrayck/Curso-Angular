@@ -1,0 +1,35 @@
+<button (click)="exchangeValue()"> Trocar valor</button>
+
+<!-- ngIF com else -->
+<div *ngIf='onDisplay; else elseBlock'>
+    Olá, estou na div com o ngIf.
+</div>
+<ng-template #elseBlock>
+    <div>
+        Vou ser exibido quando onDisplay {{ onDisplay }};
+    </div>
+</ng-template>
+<!--  -->
+<!-- ngIf com then ou else -->
+<div *ngIf="onDisplay; then thenBlock else elseBlockThen"></div>
+<ng-template #thenBlock>Content to render when condition is true.</ng-template>
+<ng-template #elseBlockThen>Content to render when condition is false.</ng-template>
+<!--  -->
+
+<div *ngIf='onSum(5,6) > 10'>
+    Exibe baseado na soma.
+</div>
+<hr><br>
+
+<!-- *ngFor -->
+<ul>
+    <li *ngFor='let item of listFruit'> {{ item }} </li>
+</ul>
+<br>
+<ul>
+    <!-- index as i || let i = index -->
+    <li *ngFor='let car of listCar; let i = index; odd as par;'>  
+       {{ par }} - {{ i+1 }} - {{ car.model }} - {{ car.color }} - {{ car.placa }}
+    </li>
+</ul>
+<!--  -->

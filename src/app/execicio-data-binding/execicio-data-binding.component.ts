@@ -23,6 +23,8 @@ export class ExecicioDataBindingComponent implements OnInit {
 
   increment = () =>{
     this.currentValue = this.currentValue - 1 + 2;
+    // this.currentValue += 1;
+    console.log(Number('15') || 0);
     this.currentValueChange.emit(this.currentValue);
   }
   decrement = () =>{
@@ -33,8 +35,7 @@ export class ExecicioDataBindingComponent implements OnInit {
     console.log('event ', $event);
     this.currentValue = $event.target.value;
     console.log(typeof this.currentValue);
-    // parseInt(this.currentValue, 10);
-    Number(this.currentValue)
+    Number(this.currentValue) || 0;
     console.log(typeof this.currentValue);
     // return parseInt(String(this.currentValue), 10);
   }
