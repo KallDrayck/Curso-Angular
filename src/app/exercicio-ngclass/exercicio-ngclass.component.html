@@ -1,0 +1,11 @@
+<button (click)="turnGreen()">Torne verde ou vermelho</button>
+<h1 [ngClass]="mustBeGreen ? 'verde' : 'vermelho'">exercicio-ngclass works!</h1>
+
+
+<h1 [ngClass]="{
+    'verde' : mustBeGreen,
+    'vermelho' : !mustBeGreen
+    }">exercicio-ngclass works in Objetc!</h1>
+
+<h1 [class.verde]="mustBeGreen">
+    Testando propertyBinding Class</h1>
