@@ -1,7 +1,7 @@
 # MinhaAplicacao
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
-https://github.com/vitorfgsantos/curso-angular
+https://github.com/vitorfgsantos/curso-angular-online/commits/master
 
 ## Development server
 
