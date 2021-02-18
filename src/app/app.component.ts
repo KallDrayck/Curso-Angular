@@ -13,6 +13,9 @@ export class AppComponent {
   initialValueCounter = 100;
 
   constructor(){
+    setTimeout(() => {
+      this.dinamicTitle = 'Seja bem-vindo! =}'
+    }, 5000);
     
   }
   eventReceived($event: any){

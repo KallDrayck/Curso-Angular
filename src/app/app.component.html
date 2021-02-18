@@ -2,9 +2,10 @@
     [title]="dinamicTitle"
 >
 </app-header>
-<app-exercicio-pipes
+<router-outlet></router-outlet>
+<!-- <app-exercicio-pipes
 >
-</app-exercicio-pipes>
+</app-exercicio-pipes> -->
 <!-- <app-exercicio-ngclass
 >
 </app-exercicio-ngclass> -->
@@ -22,5 +23,9 @@
     
     [(currentValue)]="initialValueCounter"
 ></app-execicio-data-binding> -->
-
+<div class="p-0">
+    <div class="alert alert-primary" role="alert">
+      A simple primary alert—check it out!
+    </div>
+  </div> 
 <app-footer></app-footer>
