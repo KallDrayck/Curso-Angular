@@ -33,3 +33,21 @@
     </li>
 </ul>
 <!--  -->
+
+<h2>Resolução do exercicio</h2>
+
+<ul>
+    <li *ngFor='let memesClusterd of memes'>
+        {{ memesClusterd.categoria }}
+        <div *ngFor="let photos of memesClusterd.memes; even as par; let iPhotos = index">
+            {{ par }}
+            <h1 *ngIf="par">{{ photos.titulo }}</h1>
+            <img *ngIf="par" [src]="PREFIXO_IMAGEM_URL + photos.imagemURL">
+            <h2 *ngIf="!par"> Não é par {{ iPhotos }} </h2>
+        </div>
+    </li>
+</ul>
+<br>
+<br>
+<br>
+<br>
