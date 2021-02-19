@@ -10,13 +10,18 @@ import { Transaction } from './extrato.interfaces';
 export class ExtratoService {
 
   API_URL = environment.API_URL;
-  
+
   constructor(
     private http: HttpClient,
   ) {
-   }
-  getTransantion(){
+  }
+  getTransantion(page: number) {
     // return TRANSACAO
-    return this.http.get<Transaction[]>(`${this.API_URL}/transacoes`);
+    // return throwError(new Error("Erro genérico."));
+    return this.http.get<Transaction[]>(`${this.API_URL}/transacoes`, {
+      params: {
+        _page: String(page),
+      }
+    });
   }
 }
