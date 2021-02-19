@@ -1,1 +1,19 @@
-<p>extrato works!</p>
+<div class="container">
+    <table class="table table-hover">
+      <tr>
+        <th> ID </th>
+        <th> Data </th>
+        <th> Descrição </th>
+        <th> Valor </th>
+        <th> Categoria </th>
+      </tr>
+  
+      <tr *ngFor="let transaction of transactions">
+        <td> {{ transaction.id }} </td>
+        <td> {{ transaction.data | date }} </td>
+        <td> {{ transaction.descricao }} </td>
+        <td> {{ transaction.valor | currency:'BRL' }} </td>
+        <td> {{ transaction.categoria }} </td>
+      </tr>
+    </table>
+  </div> 
