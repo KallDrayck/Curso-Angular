@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Transaction } from './extrato.interfaces';
 import { ExtratoService } from './extrato.service';
 
 @Component({
@@ -9,7 +10,9 @@ import { ExtratoService } from './extrato.service';
 })
 export class ExtratoComponent implements OnInit {
 
-  transactions: { id: number; data: string; descricao: string; valor: number; categoria: string; }[] | undefined;
+  transactions: Array<Transaction> | undefined;
+
+  onSpinners: boolean | undefined;
 
   constructor(
     private extratoService: ExtratoService
@@ -18,7 +21,17 @@ export class ExtratoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.transactions = this.extratoService.getTransantion();
+    this.load();
+  }
+  load(){
+    this.onSpinners = true;
+    this.extratoService.getTransantion()
+    .subscribe((response: Transaction[] | undefined) =>{
+      this.onSpinners = false;
+      
+      this.transactions = response;
+
+    });
   }
 
 }

@@ -1,4 +1,5 @@
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +28,7 @@ registerLocaleData(localePt, 'pt');
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule,
   ],
   providers: [{ // Idioma
     provide: LOCALE_ID,
