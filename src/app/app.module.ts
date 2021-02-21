@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { SharedModule } from './shared/shared.module';
 import { ContatosComponent } from './contatos/contatos.component';
+import { DetalhesContatoComponent } from './contatos/detalhes-contato/detalhes-contato.component';
 
 // Import idioma brasiliro
 // .
@@ -25,6 +26,7 @@ registerLocaleData(localePt, 'pt');
     ExtratoComponent,
     NaoEncontradoComponent,
     ContatosComponent,
+    DetalhesContatoComponent,
   ],
   imports: [
     BrowserModule,

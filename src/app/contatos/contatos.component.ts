@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { finalize, take } from 'rxjs/operators';
 
 import { Contatos } from './contatos.interfaces';
 import { ContatosService } from './contatos.service';
@@ -17,6 +18,7 @@ export class ContatosComponent implements OnInit {
   
   constructor(
     private contatosService: ContatosService,
+    private router: Router,
   ) {
     console.log(contatosService);
    }
@@ -32,6 +34,7 @@ export class ContatosComponent implements OnInit {
     this.contatosService
     .getContatos()
     .pipe(
+      take(1),
       finalize(()=> {this.onSpinners = false}),
     )
     .subscribe(
@@ -45,5 +48,8 @@ export class ContatosComponent implements OnInit {
   onError(error: any) {
       this.errorLoading = true;
       console.error(error);
+  }
+  goToDetails(idContato: number){
+    this.router.navigate([`contatos/${idContato}`]);
   }
 }
