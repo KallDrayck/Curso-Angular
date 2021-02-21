@@ -20,13 +20,13 @@
                 <th> Conta Corrente </th>
             </tr>
 <p>{{contato}}</p>
-            <tr>
-                <!-- <td> {{ contato.id }} </td>
-                <td> {{ contato.nome }} </td>
-                <td> {{ contato.cpf }} </td>
-                <td> {{ contato.banco }} </td>
-                <td> {{ contato.ag }} </td>
-                <td> {{ contato.cc }} </td> -->
+            <tr *ngForOf="let cont of contato">
+                <td> {{ cont.id }} </td>
+                <td> {{ cont.nome }} </td>
+                <td> {{ cont.cpf }} </td>
+                <td> {{ cont.banco }} </td>
+                <td> {{ cont.ag }} </td>
+                <td> {{ cont.cc }} </td>
             </tr>
         </table>
         <button class="btn btn-primary" (click)="goBack()">Voltar</button>

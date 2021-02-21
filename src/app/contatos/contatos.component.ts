@@ -13,8 +13,8 @@ import { ContatosService } from './contatos.service';
 export class ContatosComponent implements OnInit {
 
   contatos: Array<Contatos> | undefined;
-  onSpinners: boolean | undefined; //carregador
-  errorLoading: boolean | undefined;
+  onSpinners: boolean = true; //carregador
+  errorLoading: boolean = false;
   
   constructor(
     private contatosService: ContatosService,

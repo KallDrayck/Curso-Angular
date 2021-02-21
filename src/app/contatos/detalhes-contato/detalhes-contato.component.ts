@@ -12,9 +12,9 @@ import { ContatosService } from '../contatos.service';
 })
 export class DetalhesContatoComponent implements OnInit {
 
-  contato: Contatos | undefined;
-  onSpinners: boolean | undefined; //carregador
-  errorLoading: boolean | undefined;
+  contato!: Contatos;
+  onSpinners!: boolean; //carregador
+  errorLoading!: boolean;
 
   constructor(
     private route: ActivatedRoute,
